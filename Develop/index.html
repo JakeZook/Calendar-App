@@ -28,7 +28,7 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container-lg px-5">
+    <div id="calendar" class="container-lg px-5">
       <!-- Use class for "past", "present", and "future" to apply styles to the
         time-block divs accordingly. The javascript will need to do this by
         adding/removing these classes on each div by comparing the hour in the
@@ -65,6 +65,55 @@
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
+
+      <div id="hour-12" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">12PM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+    
+      <div id="hour-1" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div> 
+
+      <div id="hour-2" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div id="hour-3" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div id="hour-4" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div id="hour-5" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div> 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
