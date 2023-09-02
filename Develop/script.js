@@ -2,6 +2,7 @@ var currentDayDisplay = document.querySelector("#currentDay");
 var calendarDisplay = document.querySelector("#calendar");
 var timeBlocks = document.querySelectorAll(".time-block");
 var saveButtons = document.querySelectorAll(".saveBtn");
+var clearButton = document.querySelector("#clearBtn");
 
 var date = dayjs();
 var currentHour = dayjs().hour();
@@ -22,13 +23,7 @@ function handleSubmit()
 
   setCalendarDisplay();
   renderDescription();
-  
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
 
-    // console.log(calendarDisplay.children[0].children[1].textContent);
-  // TODO: Add code to display the current date in the header of the page.
 }
 
 function setCalendarDisplay()
@@ -64,14 +59,25 @@ function renderDescription()
     var description = $(timeBlocks[i]).children(".description");
     var timeBlockDescription = localStorage.getItem("Description-" + timeBlockID);
 
-    console.log(timeBlockDescription);
-    console.log(description);
-
     description.text(timeBlockDescription);
   }
+}
+
+function handleClear()
+{
+  for (let i = 0; i < timeBlocks.length; i++)
+  {
+    var timeBlockID = $(timeBlocks[i]).attr('id');
+    var clear = " ";
+
+    localStorage.setItem("Description-" + timeBlockID, clear);
+  }
+  renderDescription();
 }
 
 for (let i = 0; i < saveButtons.length; i++)
 {
   saveButtons[i].addEventListener('click', handleSubmit);
 }
+
+clearButton.addEventListener('click', handleClear);
