@@ -34,13 +34,11 @@ function setCalendarDisplay()
     var timeBlockID = $(timeBlocks[i]).attr('id');
     var hour = parseInt(timeBlockID);
 
-    var test = 13;
-
-    if (test > hour)
+    if (currentHour > hour)
     {
       timeBlock.addClass('past');
     }
-    else if (test === hour)
+    else if (currentHour === hour)
     {
       timeBlock.addClass('present');
     }
