@@ -9,16 +9,20 @@ var currentHour = dayjs().hour();
 $(currentDayDisplay).text(date.format("MMMM D, YYYY"));
 
 setCalendarDisplay();
+renderDescription();
 
-function handleSubmit() {
-  var parent = $(this).parent();
+function handleSubmit() 
+{
   var parentID = $(this).parent().attr('id');
   var descriptionBox = $('#' + parentID).children(".description");
-  var description = descriptionBox.val()
+
+  var description = descriptionBox.val();
 
   localStorage.setItem("Description-" + parentID, description);
-  
+
   setCalendarDisplay();
+  renderDescription();
+  
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
@@ -50,7 +54,21 @@ function setCalendarDisplay()
       timeBlock.addClass('future');
     }
   }
+}
 
+function renderDescription()
+{
+  for (let i = 0; i < timeBlocks.length; i++)
+  {
+    var timeBlockID = $(timeBlocks[i]).attr('id');
+    var description = $(timeBlocks[i]).children(".description");
+    var timeBlockDescription = localStorage.getItem("Description-" + timeBlockID);
+
+    console.log(timeBlockDescription);
+    console.log(description);
+
+    description.text(timeBlockDescription);
+  }
 }
 
 for (let i = 0; i < saveButtons.length; i++)
